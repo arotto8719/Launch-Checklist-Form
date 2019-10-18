@@ -51,3 +51,15 @@ button {
     height: 30px;
     margin: 10px 0;
 }
+
+#launchStatusInvalid {
+    text-color: red;
+}
+#launchStatusValid {
+    text-color: green;
+}
+
+
+
+
+

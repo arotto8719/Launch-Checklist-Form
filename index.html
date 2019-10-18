@@ -1,31 +1,33 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Launch Checklist</title>
+        <meta charset="UTF-8" />
+        <title>${json[2].Launch Checklist</title>
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script src = "script.js"></script>
+        <!-- <link ref=".js/""https://handlers.education.launchcode.org/static/planets.json""   -->
     </head>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget">
-            <!-- Fetch some planetary data -->
-        </div> 
-        <div id="launchForm">
+               <!-- Fetch some planetary data -->
+        // </div> 
+        // <div id="launchform">
             <form>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Pilot Name <input type="text" name="pilotName" id="pilotName"/></label>
+                    <label>Pilot Name <input type="text" name="pilotName" id="pilotName" /></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Co-pilot Name <input type="text" name="copilotName"/></label>
+                    <label>Co-pilot Name <input type="text" name="copilotName" id="copilotName"/></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Fuel Level (gal) <input type="text" name="fuelLevel"/></label> 
+                    <label>Fuel Level (gal) <input type="text" name="fuelLevel" id="fuelLevel"/></label> 
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Cargo Weight (lbs) <input type="text" name="cargoWeight"/></label>
+                    <label>Cargo Weight (lbs) <input type="text" name="cargoWeight" id="cargoWeight"/></label>
                 </div>
                 <button id="formSubmit">Submit</button>
-            </form>
+            </form>  
         </div>
         <div id="launchStatusCheck">
             <h2 id="launchStatus">Awaiting Information Before Launch</h2>
@@ -37,6 +39,6 @@
                     <li id="cargoStatus">Cargo weight low enough for launch</li>
                 </ol>
             </div>
-        </div>    
+        </div>  
     </body>
 </html>
