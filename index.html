@@ -2,17 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>${json[2].Launch Checklist</title>
+        <title>Launch Checklist</title>
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script src = "script.js"></script>
-        <!-- <link ref=".js/""https://handlers.education.launchcode.org/static/planets.json""   -->
+        <!-- <link ref=".js/""https://handlers.education.launchcode.org/static/planets.json"> -->
     </head>
     <body>
         <h1>Launch Checklist Form</h1>
-        <div id="missionTarget">
+        <div id="missionTarget"}>
                <!-- Fetch some planetary data -->
-        // </div> 
-        // <div id="launchform">
+            </div> 
+            <div id="launchform">
             <form>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
                     <label>Pilot Name <input type="text" name="pilotName" id="pilotName" /></label>
@@ -26,11 +26,13 @@
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
                     <label>Cargo Weight (lbs) <input type="text" name="cargoWeight" id="cargoWeight"/></label>
                 </div>
-                <button id="formSubmit">Submit</button>
+                <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
+                <button id="formSubmit" type="submit" enabled="enabled" value="Submit">Submit</button>
+                </div>
             </form>  
         </div>
         <div id="launchStatusCheck">
-            <h2 id="launchStatus">Awaiting Information Before Launch</h2>
+            <h3> <id="launchStatus">Awaiting Information Before Launch</h3>
             <div  id="faultyItems">
                 <ol>
                     <li id="pilotStatus">Pilot Ready</li>
