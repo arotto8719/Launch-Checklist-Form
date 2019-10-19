@@ -2,8 +2,9 @@
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
       fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
+         response.json().then(function(json) {
          console.log(response);
-         // response.json().then(function(json) {
+            
        const div = document.getElementById('missionTarget');
        // Add HTML that includes the JSON Data
             div.innerHTML = `
@@ -17,8 +18,8 @@ window.addEventListener("load", function() {
                            </ol> 
                            <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
                          `;         
-            // console.log(json);
-         // });
+            console.log(json);
+         });
       });
    console.log('window loaded');
 
@@ -90,6 +91,43 @@ function init() {
          console.log("submit button clicked");
          }); 
    });
+   // button.addEventListener("submit", function() {
+      //    console.log("submit", element);
+      
+//             let div = document.getElementById("missionTarget");
+//             
+//     
+//              
+               
+                   
+//                    {/* <h3>Email: <a href="sendto:${json[i].html}">${json[i].html}</a></h3>
+//                    <p><strong>Container:</strong> ${json[i].body}</p> */}
+                   
+//             }
+//          });
+//       // });
+//   });
+// }
+ // fetch(url).then(function(response)) {
+        //     <!-- JSON data?   -->
+        //   })
+        //   catch.function (err) {
+        //   });
+        //   
+        //   let planet = json[2];
+        //         console.log(typeof div);
+        //         div["className"] = "planet";
+        //         div.innerHTML = 
+        //           <li>Diameter: ${"5149.5 km"}</li>
+        //           <li>Star: ${"Sol"}</li>
+        //           <li>Distance from Earth: ${1.4 billion km from Earth"}</li>
+        //           <li>Number of Moons: ${0}</li>
+        //        </ol>
+        // <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
+}
+// ${json[2].
+
+
 window.onload = init;
 });
    /* This block of code shows how to format the HTML once you fetch some planetary JSON! */
