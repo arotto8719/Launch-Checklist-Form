@@ -28,7 +28,7 @@ function init() {
       let button = document.getElementById("submit");
          form.addEventListener("submit", function() {  
          button.addEventListener("submit", function (event) {
-         document.getElementById('submitbutton').enabled = !cansubmit;
+         // document.getElementById('submitbutton').enabled = !cansubmit;
          event.preventDefault();
 
          let pilotStatus = document.getElementById("pilotStatus");
@@ -126,8 +126,6 @@ function init() {
         // <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
 }
 // ${json[2].
-
-
 window.onload = init;
 });
    /* This block of code shows how to format the HTML once you fetch some planetary JSON! */
