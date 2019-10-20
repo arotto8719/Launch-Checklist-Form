@@ -14,8 +14,8 @@ window.addEventListener("load", function() {
             <li>Name: ${json[2].name}</li>
             <li>Diameter: ${json[2].diameter}</li>
             <li>Star: ${json[2].star}</li>
-            <li>Distance from Earth: ${json[2].DistancefromEarth}</li>
-            <li>Number of Moons: ${json[2].NumberofMoons}</li>
+            <li>Distance from Earth: ${1.4 billion km from Earth}</li>
+            <li>Number of Moons: ${0}</li>
             </ol> 
          <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
              `;         
@@ -103,6 +103,8 @@ function init() {
                    
 //                    {/* <h3>Email: <a href="sendto:${json[i].html}">${json[i].html}</a></h3>
 //                    <p><strong>Container:</strong> ${json[i].body}</p> */}
+// json[2].distancefromearth
+// json[2].numberofmoons
                    
 //             }
 //          });
