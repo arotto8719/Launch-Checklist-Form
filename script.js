@@ -1,7 +1,6 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
-  
       fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
          response.json().then(function(json) {
          console.log(response);
@@ -10,14 +9,14 @@ window.addEventListener("load", function() {
        // Add HTML that includes the JSON Data ${json[2].
             div.innerHTML = `
          <h2>Mission Destination</h2>
-            <ol>
-            <li>Name: ${json[2].name}</li>
-            <li>Diameter: ${json[2].diameter}</li>
-            <li>Star: ${json[2].star}</li>
-            <li>Distance from Earth: ${1.4 billion km from Earth}</li>
-            <li>Number of Moons: ${0}</li>
-            </ol> 
-         <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
+               <ol>
+                  <li>Name: ${json[2].name}</li>
+                  <li>Diameter: ${json[2].diameter}</li>
+                  <li>Star: ${json[2].star}</li>
+                  <li>Distance from Earth: ${json[2].distancefromEarth}</li>
+                  <li>Number of Moons: ${json[2].numberofMoons}</li>
+               </ol> 
+            <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
              `;         
             console.log(json);
          });
@@ -25,10 +24,10 @@ window.addEventListener("load", function() {
    console.log('window loaded');
 
 function init() {
-      let form = document.getElementById("launchform");
-      let button = document.getElementById("submit");
-         form.addEventListener("submit", function() {  
-         button.addEventListener("submit", function (event) {
+   let form = document.getElementById("launchform");
+   let button = document.getElementById("submit");
+      form.addEventListener("submit", function() {  
+      button.addEventListener("submit", function (event) {
          // document.getElementById('submitbutton').enabled = !cansubmit;
          event.preventDefault();
 
@@ -91,51 +90,9 @@ function init() {
       button.addEventListener("click", submitButton);
          console.log("submit button clicked");
          }); 
-   });
-   // button.addEventListener("submit", function() {
-      //    console.log("submit", element);
-      
-//             let div = document.getElementById("missionTarget");
-//             
-//     
-//              
-               
-                   
-//                    {/* <h3>Email: <a href="sendto:${json[i].html}">${json[i].html}</a></h3>
-//                    <p><strong>Container:</strong> ${json[i].body}</p> */}
-// json[2].distancefromearth
-// json[2].numberofmoons
-                   
-//             }
-//          });
-//       // });
-//   });
-// }
- // fetch(url).then(function(response)) {
-        //     <!-- JSON data?   -->
-        //   })
-        //   catch.function (err) {
-        //   });
-        //   
-        //   let planet = json[2];
-        //         console.log(typeof div);
-        //         div["className"] = "planet";
-        //         div.innerHTML = 
-        //           <li>Diameter: ${"5149.5 km"}</li>
-        //           <li>Star: ${"Sol"}</li>
-        //           <li>Distance from Earth: ${1.4 billion km from Earth"}</li>
-        //           <li>Number of Moons: ${0}</li>
-        //        </ol>
-        // <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
-}
-// 
-//    const fetchPromise = fetch(""https://handlers.education.launchcode.org/static/planets.json"");
-// fetchPromise.then( function(response) {
-//    const jsonPromise = response.json();
-//    jsonPromise.then( function(json) {
-//       console.log("missionTarget", json.2);
+      });  
+   }
 window.onload = init;
-// });
-// } );
-});
+   });
+
    /* This block of code shows how to format the HTML once you fetch some planetary JSON! */
