@@ -1,23 +1,24 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
+  
       fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
          response.json().then(function(json) {
          console.log(response);
             
        const div = document.getElementById('missionTarget');
-       // Add HTML that includes the JSON Data
+       // Add HTML that includes the JSON Data ${json[2].
             div.innerHTML = `
-                           <h2>Mission Destination</h2>
-                           <ol>
-                              <li>Name: ${json.name}</li>
-                              <li>Diameter: ${json.diameter}</li>
-                              <li>Star: ${json.star}</li>
-                              <li>Distance from Earth: ${json.distancefromEarth}</li>
-                              <li>Number of Moons: ${json.numberofMoons}</li>
-                           </ol> 
-                           <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
-                         `;         
+         <h2>Mission Destination</h2>
+            <ol>
+            <li>Name: ${json[2].name}</li>
+            <li>Diameter: ${json[2].diameter}</li>
+            <li>Star: ${json[2].star}</li>
+            <li>Distance from Earth: ${json[2].DistancefromEarth}</li>
+            <li>Number of Moons: ${json[2].NumberofMoons}</li>
+            </ol> 
+         <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
+             `;         
             console.log(json);
          });
       });
@@ -125,7 +126,14 @@ function init() {
         //        </ol>
         // <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
 }
-// ${json[2].
+// 
+//    const fetchPromise = fetch(""https://handlers.education.launchcode.org/static/planets.json"");
+// fetchPromise.then( function(response) {
+//    const jsonPromise = response.json();
+//    jsonPromise.then( function(json) {
+//       console.log("missionTarget", json.2);
 window.onload = init;
+// });
+// } );
 });
    /* This block of code shows how to format the HTML once you fetch some planetary JSON! */
