@@ -88,6 +88,8 @@ function init() {
     } 
       document.getElementById("form").submit(); 
       button.addEventListener("click", submitButton);
+      // <!-- <button ="alert('submit')" enabled="enabled"  -->
+      //           <button onclick="console.log('submit...');">Submit</button>
          console.log("submit button clicked");
          }); 
       });  
