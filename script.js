@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
-   let form = document.querySelector("form");
+   // let form = document.querySelector("form");
       fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
          response.json().then(function(json) {
          console.log(response);
@@ -13,24 +13,22 @@ window.addEventListener("load", function() {
                   <li>Name: ${json[2].name}</li>
                   <li>Diameter: ${json[2].diameter}</li>
                   <li>Star: ${json[2].star}</li>
-                  <li>Distance from Earth: ${json[2].distancefromEarth}</li>
-                  <li>Number of Moons: ${json[2].numberofMoons}</li>
+                  <li>Distance from Earth: ${json[2].distance}</li>
+                  <li>Number of Moons: ${json[2].moons}</li>
                </ol> 
-            <img src="${"https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg"}">
-             `;         
-            console.log(json);
+            <img src=${json[2].image}>
+             `
          });
       });
    console.log('window loaded');
 
-function init() {
+// function init() {
    let form = document.getElementById("launchform");
-   let button = document.getElementById("submit");
-      form.addEventListener("submit", function() {  
+   let button = document.getElementById("formSubmit");
+      // form.addEventListener("submit", function() { 
+         console.log('form submit'); 
       button.addEventListener("submit", function (event) {
-         // document.getElementById('submitbutton').enabled = !cansubmit;
          event.preventDefault();
-
          let pilotStatus = document.getElementById("pilotStatus");
          let copilotStatus = document.getElementById("copilotStatus");
          let fuelStatus = document.getElementById("fuelStatus");
@@ -46,12 +44,15 @@ function init() {
          if(cargoWeight.value === 0 || fuelLevel.value === 0
             || pilotName.value === "" || copilotName.value === "") {
                alert("all fields are required!");  
+               // event.preventDefault();
            }
          if(isNaN(cargoWeight.value) || isNaN(fuelLevel.value)) {
-               alert("Make sure to enter valid information for each field!");             
+               alert("Make sure to enter valid information for each field!");    
+               // event.preventDefault();         
            }
          if(Number.isInteger(pilotName.value) || Number.isInteger(copilotName.value)) {
               alert("Make sure to enter valid information for each field!");
+            //   event.preventDefault();
            }
 
          if (fuelLevel.value < 10000) {
@@ -79,22 +80,22 @@ function init() {
          // }  
          console.log("alert"); 
 
-      function submitButtonClicked() {
-         document.getElementById("submitButton").innerHTML += "submitButtonClicked...";
+      // function submitButtonClicked() {
+      //    document.getElementById("submitButton").innerHTML += "submitButtonClicked...";
 
-         if (launchStatusValid === true) {
-         document.getElementById('submitButton').enabled = true;
-        }
-    } 
-      document.getElementById("form").submit(); 
-      button.addEventListener("click", submitButton);
-      // <!-- <button ="alert('submit')" enabled="enabled"  -->
-      //           <button onclick="console.log('submit...');">Submit</button>
-         console.log("submit button clicked");
+      //    if (launchStatusValid === true) {
+      //    document.getElementById('submitButton').enabled = true;
+      //   }
+   //  } 
+      // document.getElementById("form").submit(); 
+      // button.addEventListener("click", submitButton);
+      // // <!-- <button ="alert('submit')" enabled="enabled"  -->
+      // //           <button onclick="console.log('submit...');">Submit</button>
+      //    console.log("submit button clicked");
          }); 
-      });  
-   }
-window.onload = init;
+      // });  
+   // }
+// window.onload = init;
    });
 
    /* This block of code shows how to format the HTML once you fetch some planetary JSON! */
