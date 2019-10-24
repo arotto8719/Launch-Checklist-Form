@@ -60,24 +60,26 @@ window.addEventListener("load", function() {
             launchStatusCheck = false;
             fuelStatus.innerHTML = "not enough fuel for the journey"
             launchStatus.innerHTML = "Shuttle not ready for launch"
-            launchStatus.setAttribute("id", "launchStatusInvalid");
+            launchStatus.setAttribute("class", "launchStatusInvalid");
          } else {
            launchStatusCheck = true;
            fuelStatus.innerHTML ="Fuel level high enough for launch";
          } 
          if (cargoWeight.value > 10000) {
-            faultyItems.show();
+            faultyItems.style.visibility = "visible";
             launchStatusCheck = false;
             cargoStatus.innerHTML = "too much mass for the shuttle to take off"
             launchStatus.innerHTML = "Shuttle not ready for launch"
-            launchStatus.setAttribute("id", "launchStatusInvalid");
+            launchStatus.setAttribute("class", "launchStatusInvalid");
          } else {
-            launchStatusCheck = true;
+            if (fuelLevel.value >= 10000) {
+               launchStatusCheck = true;
+            }
             cargoStatus.innerHTML ="Cargo weight low enough for launch";
          }
          if (launchStatusCheck === true) {
             launchStatus.innerHTML = "Shuttle is ready for launch"
-            launchStatus.setAttribute("id", "launchStatusValid"); 
+            launchStatus.setAttribute("class", "launchStatusValid"); 
          }
          // if (fuelLevel === 890) {
          //    fuelStatus.innerHTML = "not enough fuel for the journey"

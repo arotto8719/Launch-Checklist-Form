@@ -52,10 +52,10 @@ button {
     margin: 10px 0;
 }
 
-#launchStatusInvalid {
+.launchStatusInvalid {
     color: red;
 }
-#launchStatusValid {
+.launchStatusValid {
     color: green;
 }
 
