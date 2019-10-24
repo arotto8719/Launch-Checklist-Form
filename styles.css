@@ -53,10 +53,10 @@ button {
 }
 
 #launchStatusInvalid {
-    text-color: red;
+    color: red;
 }
 #launchStatusValid {
-    text-color: green;
+    color: green;
 }
 
 

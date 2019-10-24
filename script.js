@@ -25,9 +25,8 @@ window.addEventListener("load", function() {
 // function init() {
    let form = document.getElementById("launchform");
    let button = document.getElementById("formSubmit");
-      // form.addEventListener("submit", function() { 
+      button.addEventListener("click", function (event) {
          console.log('form submit'); 
-      button.addEventListener("submit", function (event) {
          event.preventDefault();
          let pilotStatus = document.getElementById("pilotStatus");
          let copilotStatus = document.getElementById("copilotStatus");
@@ -55,6 +54,7 @@ window.addEventListener("load", function() {
             //   event.preventDefault();
            }
 
+           console.log(fuelLevel.value, 'fuel');
          if (fuelLevel.value < 10000) {
             faultyItems.style.visibility = "visible";
             launchStatusCheck = false;
