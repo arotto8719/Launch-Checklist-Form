@@ -58,24 +58,30 @@ window.addEventListener("load", function() {
          if (fuelLevel.value < 10000) {
             faultyItems.style.visibility = "visible";
             launchStatusCheck = false;
-            fuelStatus.inner.HTML = "not enough fuel for the journey"
-            launchStatus.inner.HTML = "Shuttle not ready for launch"
-            launchStatus.attr("id", "launchStatusInvalid");
-         }  
+            fuelStatus.innerHTML = "not enough fuel for the journey"
+            launchStatus.innerHTML = "Shuttle not ready for launch"
+            launchStatus.setAttribute("id", "launchStatusInvalid");
+         } else {
+           launchStatusCheck = true;
+           fuelStatus.innerHTML ="Fuel level high enough for launch";
+         } 
          if (cargoWeight.value > 10000) {
             faultyItems.show();
             launchStatusCheck = false;
-            cargoStatus.inner.HTML = "too much mass for the shuttle to take off"
-            launchStatus.inner.HTML = "Shuttle not ready for launch"
-            launchStatus.attr("id", "launchStatusInvalid");
+            cargoStatus.innerHTML = "too much mass for the shuttle to take off"
+            launchStatus.innerHTML = "Shuttle not ready for launch"
+            launchStatus.setAttribute("id", "launchStatusInvalid");
+         } else {
+            launchStatusCheck = true;
+            cargoStatus.innerHTML ="Cargo weight low enough for launch";
          }
          if (launchStatusCheck === true) {
-            launchStatus.inner.HTML = "Shuttle is ready for launch"
-            launchStatus.attr("id", "launchStatusValid"); 
+            launchStatus.innerHTML = "Shuttle is ready for launch"
+            launchStatus.setAttribute("id", "launchStatusValid"); 
          }
          // if (fuelLevel === 890) {
-         //    fuelStatus.inner.HTML = "not enough fuel for the journey"
-         //    launchStatus.inner.HTML = "Shuttle not ready for launch"
+         //    fuelStatus.innerHTML = "not enough fuel for the journey"
+         //    launchStatus.innerHTML = "Shuttle not ready for launch"
          //    launchStatus.attr("id", "launchStatusInvalid"); -890 liters of fuel part
          // }  
          console.log("alert"); 
