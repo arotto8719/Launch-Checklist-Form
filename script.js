@@ -40,20 +40,29 @@ window.addEventListener("load", function() {
          let cargoWeight = document.getElementById("cargoWeight");
          let launchStatusCheck = true;
 
-         if(cargoWeight.value === 0 || fuelLevel.value === 0
+         if(cargoWeight.value === "" || fuelLevel.value === ""
             || pilotName.value === "" || copilotName.value === "") {
                alert("all fields are required!");  
+               return;
                // event.preventDefault();
            }
          if(isNaN(cargoWeight.value) || isNaN(fuelLevel.value)) {
-               alert("Make sure to enter valid information for each field!");    
+               alert("Make sure to enter valid information for each field!");   
+               return; 
                // event.preventDefault();         
            }
-         if(Number.isInteger(pilotName.value) || Number.isInteger(copilotName.value)) {
+         if(Number.isInteger(Number(pilotName.value)) || Number.isInteger(Number(copilotName.value))) {
               alert("Make sure to enter valid information for each field!");
+              return;
             //   event.preventDefault();
+           }else{
+             if(pilotName.value !== "") {
+               pilotStatus.innerHTML = "Pilot " + pilotName.value + " is ready for launch"
+              }
+              if(copilotName.value !== "") {
+               copilotStatus.innerHTML = "Co-pilot " + copilotName.value + " is ready for launch"
+              }
            }
-
            console.log(fuelLevel.value, 'fuel');
          if (fuelLevel.value < 10000) {
             faultyItems.style.visibility = "visible";
@@ -101,6 +110,8 @@ window.addEventListener("load", function() {
       // //           <button onclick="console.log('submit...');">Submit</button>
       //    console.log("submit button clicked");
          }); 
+
+         
       // });  
    // }
 // window.onload = init;
